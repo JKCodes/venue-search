@@ -12,14 +12,17 @@ class Nav extends Component {
     }
   }
 
-  searchVenues() {
+  searchVenues(event) {
+    event.preventDefault()
+
     const url = 'https://api.foursquare.com/v2/venues/search'
 
     const params = {
       v: '20140806',
       near: this.state.zipCode,
       client_id: 'VZZ1EUDOT0JYITGFDKVVMCLYHB3NURAYK3OHB5SK5N453NFD',
-      client_secret: 'UAA15MIFIWVKZQRH22KPSYVWREIF2EMMH0GQ0ZKIQZC322NZ'
+      client_secret: 'UAA15MIFIWVKZQRH22KPSYVWREIF2EMMH0GQ0ZKIQZC322NZ',
+      query: 'coffee'
     }
 
     superagent
@@ -38,12 +41,29 @@ class Nav extends Component {
     })
   }
 
+  changeFilter(event) {
+    console.log("blah")
+  }
+
   render() {
     return (
-      <div>
-        <input onChange={this.updateZipcode.bind(this)} type="text" placeholder="Zip Code" />
-        <button onClick={this.searchVenues.bind(this)}>Search</button>
-      </div>
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <form className="navbar-form navbar-left" role="search">
+              <div className="form-group">
+                <input className="form-control" onChange={this.updateZipcode.bind(this)} type="text" placeholder="Zip Code" />
+                <select id="filter" onChange={this.changeFilter.bind(this)} style={{marginLeft: 12}} className="form-control">
+                  <option value="food">Food</option>
+                  <option value="coffee">Coffee</option>
+                  <option value="clothing">Clothing</option>
+                 </select> 
+              </div>
+              <button style={{marginLeft: 12}} className="btn btn-default" onClick={this.searchVenues.bind(this)}>Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
     )
   }
 }
