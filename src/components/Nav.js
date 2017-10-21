@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import superagent from 'superagent'
+import { connect } from 'react-redux'
+import actions from '../actions'
 
 class Nav extends Component {
 
@@ -26,7 +28,7 @@ class Nav extends Component {
     .set('Accept', 'application/json')
     .end((err, response) => {
       const venues = response.body.response.venues
-      console.log('RESPONSE: ' + JSON.stringify(venues))
+      this.props.venuesReceived(venues)
     })
   }
 
@@ -46,4 +48,16 @@ class Nav extends Component {
   }
 }
 
-export default Nav
+const stateToProps = (state) => {
+  return {
+    venues: state.venue
+  }
+}
+
+const dispatchToProps = (dispatch) => {
+  return {
+    venuesReceived: (venues) => dispatch(actions.venuesReceived(venues))
+  }
+}
+
+export default connect(stateToProps, dispatchToProps)(Nav)
