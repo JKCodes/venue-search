@@ -10,11 +10,13 @@ class Nav extends Component {
   }
 
   searchVenues() {
-    console.log('searchVenues: ')
+    console.log('searchVenues: ' + this.state.zipCode)
   }
 
   updateZipcode(event) {
-    console.log('updateZipcode: ' + event.target.value)
+    this.setState({
+      zipCode: event.target.value
+    })
   }
 
   render() {

@@ -21271,12 +21271,14 @@ var Nav = function (_Component) {
   _createClass(Nav, [{
     key: 'searchVenues',
     value: function searchVenues() {
-      console.log('searchVenues: ');
+      console.log('searchVenues: ' + this.state.zipCode);
     }
   }, {
     key: 'updateZipcode',
     value: function updateZipcode(event) {
-      console.log('updateZipcode: ' + event.target.value);
+      this.setState({
+        zipCode: event.target.value
+      });
     }
   }, {
     key: 'render',
