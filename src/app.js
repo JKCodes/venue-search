@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Nav } from './components'
+import { Nav, Venues } from './components'
 
 class App extends Component {
 
@@ -9,6 +9,7 @@ class App extends Component {
       <div>
         <Nav />
         React App
+        <Venues />
       </div>
     )
   }
