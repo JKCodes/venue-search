@@ -5,7 +5,8 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        Nav Component
+        <input type="text" placeholder="Zip Code" />
+        <button>Search</button>
       </div>
     )
   }

@@ -21264,12 +21264,17 @@ var Nav = function (_Component) {
   }
 
   _createClass(Nav, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
-        'Nav Component'
+        _react2.default.createElement("input", { type: "text", placeholder: "Zip Code" }),
+        _react2.default.createElement(
+          "button",
+          null,
+          "Search"
+        )
       );
     }
   }]);
