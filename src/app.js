@@ -4,18 +4,13 @@ import { Nav, Venues } from './components'
 import store from './stores'
 import { Provider } from 'react-redux'
 
-class App extends Component {
-
-  render() {
-    return (
-      <Provider store={store.initialize()}>
+const app = (
+  <Provider store={store.initialize()}>
         <div>
           <Nav />
           <Venues />
         </div>
-      </Provider>
-    )
-  }
-}
+  </Provider>
+)
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(app, document.getElementById('root'))
