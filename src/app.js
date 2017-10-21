@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        React App
         <Venues />
       </div>
     )

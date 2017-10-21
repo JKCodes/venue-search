@@ -995,7 +995,6 @@ var App = function (_Component) {
         'div',
         null,
         _react2.default.createElement(_components.Nav, null),
-        'React App',
         _react2.default.createElement(_components.Venues, null)
       );
     }
