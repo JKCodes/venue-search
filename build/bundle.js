@@ -21260,7 +21260,12 @@ var Nav = function (_Component) {
   function Nav() {
     _classCallCheck(this, Nav);
 
-    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this));
+
+    _this.state = {
+      zipCode: ''
+    };
+    return _this;
   }
 
   _createClass(Nav, [{
@@ -21269,12 +21274,17 @@ var Nav = function (_Component) {
       console.log('searchVenues: ');
     }
   }, {
+    key: 'updateZipcode',
+    value: function updateZipcode(event) {
+      console.log('updateZipcode: ' + event.target.value);
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { type: 'text', placeholder: 'Zip Code' }),
+        _react2.default.createElement('input', { onChange: this.updateZipcode.bind(this), type: 'text', placeholder: 'Zip Code' }),
         _react2.default.createElement(
           'button',
           { onClick: this.searchVenues.bind(this) },
