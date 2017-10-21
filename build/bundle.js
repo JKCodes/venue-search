@@ -21341,7 +21341,25 @@ var Venues = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'Venues Component'
+        _react2.default.createElement(
+          'ol',
+          null,
+          _react2.default.createElement(
+            'li',
+            null,
+            'Venue 1'
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            'Venue 2'
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            'Venue 3'
+          )
+        )
       );
     }
   }]);
