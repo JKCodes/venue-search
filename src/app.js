@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Nav, Venues } from './components'
+import store from './stores'
+import { Provider } from 'react-redux'
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav />
-        <Venues />
-      </div>
+      <Provider store={store.initialzie()}>
+        <div>
+          <Nav />
+          <Venues />
+        </div>
+      </Provider>
     )
   }
 }
