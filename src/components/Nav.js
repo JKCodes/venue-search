@@ -50,7 +50,6 @@ class Nav extends Component {
 
 const stateToProps = (state) => {
   return {
-    venues: state.venue
   }
 }
 
