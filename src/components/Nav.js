@@ -8,7 +8,8 @@ class Nav extends Component {
   constructor() {
     super()
     this.state = {
-      zipCode: ''
+      zipCode: '',
+      filter: 'food'
     }
   }
 
@@ -22,7 +23,7 @@ class Nav extends Component {
       near: this.state.zipCode,
       client_id: 'VZZ1EUDOT0JYITGFDKVVMCLYHB3NURAYK3OHB5SK5N453NFD',
       client_secret: 'UAA15MIFIWVKZQRH22KPSYVWREIF2EMMH0GQ0ZKIQZC322NZ',
-      query: 'coffee'
+      query: this.state.filter
     }
 
     superagent
@@ -42,7 +43,10 @@ class Nav extends Component {
   }
 
   changeFilter(event) {
-    console.log("blah")
+    console.log(event.target.value)
+    this.setState({
+      filter: event.target.value
+    })
   }
 
   render() {
@@ -57,6 +61,8 @@ class Nav extends Component {
                   <option value="food">Food</option>
                   <option value="coffee">Coffee</option>
                   <option value="clothing">Clothing</option>
+                  <option value="music">Music</option>
+                  <option value="fitness">Fitness</option>
                  </select> 
               </div>
               <button style={{marginLeft: 12}} className="btn btn-default" onClick={this.searchVenues.bind(this)}>Search</button>
