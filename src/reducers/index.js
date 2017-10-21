@@ -1,5 +1,5 @@
 import venuesReducer from './venuesReducer'
 
-export default {
+export {
   venuesReducer
 }

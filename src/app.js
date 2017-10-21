@@ -8,7 +8,7 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store.initialzie()}>
+      <Provider store={store.initialize()}>
         <div>
           <Nav />
           <Venues />
