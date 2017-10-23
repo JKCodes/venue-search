@@ -24,7 +24,7 @@ class Map extends Component {
 
     const venues = this.props.venues || []
     const markers = venues.map((venue,i) => {
-      return { key: i, position: {lat: venue["location"]["lat"], lng: venue["location"]["lng"]}, label: `${i}`}
+      return { key: i, position: {lat: venue["location"]["lat"], lng: venue["location"]["lng"]}, label: `${i + 1}`}
     })
     const center = markers.length > 0 ? markers[0].position : {lat:0 , lng: 0}
 
